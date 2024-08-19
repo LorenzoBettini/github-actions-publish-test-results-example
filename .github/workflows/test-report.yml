@@ -8,7 +8,7 @@ jobs:
   report:
     runs-on: ubuntu-latest
     steps:
-    - uses: turing85/publish-report@v2
+    - uses: turing85/publish-report@v2.0.2
       with:
         checkout: true
         download-artifact-pattern: test-results-*
