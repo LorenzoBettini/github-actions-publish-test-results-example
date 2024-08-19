@@ -13,7 +13,6 @@ jobs:
        include:
        - os: ubuntu-22.04
          java: 21
-         additional-maven-args: -Pstrict-jdk-21
       fail-fast: false
     runs-on: ${{ matrix.os }}
 
