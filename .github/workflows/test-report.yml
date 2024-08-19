@@ -1,0 +1,18 @@
+name: 'Test Report'
+on:
+  workflow_run:
+    workflows: ['Build']                     # runs after CI workflow
+    types:
+      - completed
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: turing85/publish-report@v2
+      with:
+        checkout: true
+        download-artifact-pattern: test-results-*
+        download-artifact-merge-multiple: true
+        report-name: JUnit Test
+        report-only-summary: true
+        report-path: '**/target/surefire-reports/TEST*.xml'
